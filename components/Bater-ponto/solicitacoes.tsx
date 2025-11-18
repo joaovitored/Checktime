@@ -12,7 +12,7 @@ const registros = [
 ];
 export default function RelatorioList() {
     return(
-        <div className={styles.cardlist2}>
+        <div className={styles.cardlist}>
             {registros.map((item, i) => (
                <div key={i} className={styles.card}>
                     <div className={styles.row2}>
