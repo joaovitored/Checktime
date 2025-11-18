@@ -27,7 +27,7 @@ export function AuthLinks({
       )}
       
       {showSignUp && (
-        <FieldDescription className="text-center text-white">
+        <FieldDescription className="text-center text-white text-decoration: underline overline;">
           {signUpText.includes("?") ? (
             <>{signUpText.split("?")[0]}? <Link href={signUpHref}>{signUpText.split("?")[1].trim()}</Link></>
           ) : (

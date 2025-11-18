@@ -49,8 +49,9 @@ export function SignupForm({
           placeholder="Confirme a sua senha"
           required
         />
-
+        
         <Button type="submit">CADASTRE-SE</Button>
+        
 
         <AuthLinks 
           signUpHref={routes.login}

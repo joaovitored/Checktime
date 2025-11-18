@@ -5,52 +5,52 @@ import { AuthHeader } from "@/components/auth/auth-header";
 import { AuthFormField } from "@/components/auth/auth-form-field";
 import { AuthLinks } from "@/components/auth/auth-links";
 import { routes } from "@/lib/routes";
+import { loginAction } from "@/app/login/action";
 
-export function LoginForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
-  return (
-    <AuthLayout className={className} {...props}>
-      <FieldGroup>
-        <AuthHeader 
-          title="LOGIN" 
-          description="Use o seu email empresarial de preferência" 
-        />
-        
-        <AuthFormField
-          id="email"
-          label="Email"
-          type="email"
-          placeholder="Digite o seu email"
-          required
-        />
-        
-        <AuthFormField
-          id="password"
-          label="Senha"
-          type="password"
-          placeholder="Digite a sua senha"
-          required
-        />
+export function LoginForm({ className }: { className?: string }) {
+  return(
+  <form action={loginAction} className={className}>
+  <AuthLayout>
+    <FieldGroup>
 
-        {/* 🔹 Mostra apenas o link "Esqueci minha senha" */}
-        <AuthLinks 
-          forgotPasswordHref={routes.esqueciSenha}
-          showForgotPassword={true}
-          showSignUp={false}
-        />
+      <AuthHeader 
+        title="LOGIN" 
+        description="Use o seu email empresarial de preferência" 
+      />
 
-        {/* 🔹 Botão ENTRAR agora vem logo abaixo */}
-        <Button type="submit">ENTRAR</Button>
+      <AuthFormField
+        id="email"
+        name="email"
+        label="Email"
+        type="email"
+        placeholder="Digite o seu email"
+        required
+      />
 
-        {/* 🔹 Mostra apenas "Não tem uma conta? Cadastre-se" */}
-        <AuthLinks 
-          signUpHref={routes.cadastro}
-          showForgotPassword={false}
-          showSignUp={true}
-        />
-      </FieldGroup>
-    </AuthLayout>
+      <AuthFormField
+        id="password"
+        name="password"
+        label="Senha"
+        type="password"
+        placeholder="Digite a sua senha"
+        required
+      />
+          <AuthLinks 
+            forgotPasswordHref={routes.esqueciSenha}
+            showForgotPassword={true}
+            showSignUp={false}
+          />
+
+          <Button type="submit">ENTRAR</Button>
+
+          <AuthLinks 
+            signUpHref={routes.cadastro}
+            showForgotPassword={false}
+            showSignUp={true}
+          />
+
+        </FieldGroup>
+      </AuthLayout>
+    </form>
   );
 }

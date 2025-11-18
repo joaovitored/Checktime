@@ -10,29 +10,41 @@ interface AuthLayoutProps {
 
 export function AuthLayout({ children, className, reversed = false, ...props }: AuthLayoutProps & React.ComponentProps<"div">) {
   return (
-    <div className={cn("h-[90vh] flex items-center justify-center overflow-hidden", className)} {...props}> {/*modifiquei de 80hv pra 90hv pra centralizar */}
-      <Card className="w-[80vw] max-h-[80vh] rounded-[30px]">
+    
+    <div
+      className={cn("h-/100vh flex items-center justify-center overflow-hidden", className)}
+      {...props}
+    >
+      <Card className="w-[80vw] h-/100vh rounded-[30px]">
         <CardContent className="grid p-0 md:grid-cols-2 h-full">
+
           {reversed ? (
             <>
+              {/* Lado esquerdo: imagem */}
               <div className="flex items-center justify-center bg-white rounded-2xl p-6 md:p-8">
                 <Vector />
               </div>
-              <form className="p-6 md:p-8 flex items-center">
+
+              {/* Lado direito: conteúdo */}
+              <div className="p-6 md:p-8 flex items-center">
                 {children}
-              </form>
+              </div>
             </>
           ) : (
             <>
-              <form className="p-6 md:p-8 flex items-center">
+              {/* Lado esquerdo: conteúdo */}
+              <div className="p-6 md:p-8 flex items-center">
                 {children}
-              </form>
+              </div>
+
+              {/* Lado direito: imagem */}
               <div className="flex items-center justify-center bg-white rounded-2xl p-6 md:p-8">
                 <Vector />
-                
               </div>
             </>
           )}
+          
+
         </CardContent>
       </Card>
     </div>
