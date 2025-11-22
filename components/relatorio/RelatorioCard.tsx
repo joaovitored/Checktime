@@ -5,7 +5,7 @@ interface RelatorioCardProps {
   title: string;  
   value: string;
   subValue?: string;
-  icon: ReactNode; // ✅ <-- Adicione esta linha
+  icon: ReactNode; 
 }
 
 export default function RelatorioCard({ title, value, subValue, icon }: RelatorioCardProps) {

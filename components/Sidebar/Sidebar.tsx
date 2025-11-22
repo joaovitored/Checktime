@@ -22,7 +22,9 @@ export default function Sidebar() {
     >
       
       {!isMinimized && (
-        <div className={styles.profileimg}>
+        <div onClick={(e)=>{e.stopPropagation();
+          router.push("/editar-perfil")}} className={styles.profileimg}>
+          
           <div className={styles.profile}>
           <img
           src="/follow.png"
@@ -88,18 +90,7 @@ export default function Sidebar() {
           <CalendarMonthIcon className="mr-3" />
           {!isMinimized && "Ponto Espelho"}
         </button>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            router.push("/ponto-espelho");
-          }}
-          className={styles.button}
-          style={{ justifyContent: isMinimized ? 'center' : 'flex-start' }}
-          title="Solicitar Abono"
-        >
-          <RequestPageIcon className="mr-3" />
-          {!isMinimized && "Solicitar Abono"}
-        </button>
+       
       </nav>
     
       <nav className={styles.nav2}>

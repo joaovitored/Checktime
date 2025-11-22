@@ -1,4 +1,4 @@
-import Faltas from "@/components/Abono-de-Faltas/faltas";
+import Faltas from "@/components/Abono-falta/faltas";
 export default function AbonoFaltaPage() {
   return <Faltas />;
 }

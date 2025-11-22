@@ -1,6 +1,6 @@
 "use client";
 
-import Sidebar from "../../components/relatorio/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import styles from "../../styles/Home.module.css";
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';

@@ -1,4 +1,4 @@
-import Sidebar from "../../components/relatorio/Sidebar"
+import Sidebar from "../../components/Sidebar/Sidebar"
 import SolicitacaoLista from "../../components/Bater-ponto/solicitacoes"
 import styles from "@/styles/Home.module.css"
 

@@ -18,7 +18,7 @@
 
 .row {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
   align-items: center;
   background: #fff;
   border-radius: 8px;
@@ -36,16 +36,6 @@
   transform: translateY(-3px);
 }
 
-
-.date {
-  font-weight: 600;
-  color: #333;
-}
-
-.info {
-  color: #555;
-  font-size: 0.9rem;
-}
 .button{
   background: none;
   opacity: 0.3;
@@ -68,13 +58,14 @@
   transition: transform 0.2s ease;
   font-size: 0.9rem;
   height: 100px;
-  
 }
+
 .row2 h3{
  display: flex;
-    align-items: center; /* Alinha texto + ícone no centro */
-    gap: 4px;
+ align-items: center;
+ gap: 4px;
 }
+
 .cardlist2 {
   background: #fff;
   width: auto;
@@ -92,4 +83,71 @@
   gap: 4px;
   box-shadow: 0 2px 6px #0F4F55;
   margin-left: 250px;
+}
+
+/* --- SLIDE ANIMATION --- */
+.slide {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.slide.open {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Ícone girando */
+.icon {
+  transition: transform 0.25s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Botão Selecionar */
+.selectButton {
+  background: #0F4F55;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.selectButton:hover {
+  opacity: 0.9;
+}
+
+/* ⭐ NOVO: Banner com gradiente */
+.bannerGestor {
+  background: linear-gradient(90deg, #94FC71 0%, #0F4F55 100%);
+  padding: 5px 28px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+.botaoAjuste {
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 10px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.botaoAjuste:hover {
+  background: rgba(255,255,255,0.25);
 }
