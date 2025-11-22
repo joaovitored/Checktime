@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import stytles from "./faltas.css";
+// @ts-ignore: allow importing CSS without type declarations
+import "./ajuste.css";
 
 interface FormState {
   dia: string;
