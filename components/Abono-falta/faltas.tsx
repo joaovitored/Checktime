@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+// @ts-ignore: allow importing CSS as a side-effect in this project
 import "./faltas.css";
 
 interface FormState {
