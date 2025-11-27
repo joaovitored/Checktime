@@ -8,11 +8,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[#0F4F55] text-white hover:bg-[#0c4047]rounded-[30px] ",
+        default: "bg-[#0F4F55] text-white hover:bg-[#0c4047]",
       },
       size: {
-        default: "h-9 px-4 py-2 rounded-full",
-        large: "h-[46px] w-[520px] rounded-[30px]",
+        default: "h-9 px-4 py-2 rounded-[10px]",
+        large: "h-[46px] w-[520px] rounded-[10px]",
       },
     },
     defaultVariants: {
@@ -21,7 +21,7 @@ const buttonVariants = cva(
     },
   }
 )
-
+// atualizei colocando os botões da tela de login, cadastro e esqueci minha senha redondos
 function Button({
   className,
   variant,

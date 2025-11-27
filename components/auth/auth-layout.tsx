@@ -10,41 +10,44 @@ interface AuthLayoutProps {
 
 export function AuthLayout({ children, className, reversed = false, ...props }: AuthLayoutProps & React.ComponentProps<"div">) {
   return (
-    
     <div
-      className={cn("h-/100vh flex items-center justify-center overflow-hidden", className)}
+      className={cn(
+        "min-h-screen flex items-center justify-center   from-[#0C5051] to-[#94FC71]",
+        className
+      )}
       {...props}
     >
-      <Card className="w-[80vw] h-/100vh rounded-[30px]">
-        <CardContent className="grid p-0 md:grid-cols-2 h-full">
-
+      <Card 
+        className="rounded-[30px] flex-shrink-0"
+        style={{
+          width: "1120px",
+          height: "707px",
+          maxWidth: "95vw",
+          maxHeight: "95vh",
+        }}
+      >
+        <CardContent className="grid p-0 md:grid-cols-2 h-full rounded-[30px] overflow-hidden">
           {reversed ? (
             <>
-              {/* Lado esquerdo: imagem */}
-              <div className="flex items-center justify-center bg-white rounded-2xl p-6 md:p-8">
+              <div className="flex items-center justify-center bg-white rounded-l-2xl p-6 md:p-8 h-full">
                 <Vector />
               </div>
 
-              {/* Lado direito: conteúdo */}
-              <div className="p-6 md:p-8 flex items-center">
+              <div className="p-6 md:p-8 flex items-center h-full">
                 {children}
               </div>
             </>
           ) : (
             <>
-              {/* Lado esquerdo: conteúdo */}
-              <div className="p-6 md:p-8 flex items-center">
+              <div className="p-6 md:p-8 flex items-center h-full">
                 {children}
               </div>
 
-              {/* Lado direito: imagem */}
-              <div className="flex items-center justify-center bg-white rounded-2xl p-6 md:p-8">
+              <div className="flex items-center justify-center bg-white rounded-r-2xl p-6 md:p-8 h-full">
                 <Vector />
               </div>
             </>
           )}
-          
-
         </CardContent>
       </Card>
     </div>

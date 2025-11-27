@@ -88,7 +88,8 @@ a {
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(52.435% 0.08384 194.941);
+  --card-foreground: oklch(1 0 0);
+  --card-bg: rgba(114, 114, 114, 0.3); /* troca a cor do card transparente */
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823); 
   --primary: oklch(0.21 0.006 285.885);
@@ -101,7 +102,7 @@ a {
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
+  --input: #ffffffff; /* fundo branco dos inputs */
   --ring: oklch(0.705 0.015 286.067);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);

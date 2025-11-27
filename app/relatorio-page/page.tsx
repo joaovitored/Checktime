@@ -18,7 +18,7 @@ export default function RelatorioPage() {
     <div className={styles.container}>
       <Sidebar />
       <main className={styles.main}>
-        <h1 className={styles.title}>Relatório de Ponto</h1>
+        <h1 className={styles.title}>RELATÓRIO DE PONTO</h1>
         <hr className={styles.linha}></hr>
 
        <div className={styles.cards}>

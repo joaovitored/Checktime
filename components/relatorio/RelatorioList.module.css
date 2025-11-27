@@ -85,7 +85,7 @@
   margin-left: 250px;
 }
 
-/* --- SLIDE ANIMATION --- */
+
 .slide {
   max-height: 0;
   overflow: hidden;
@@ -107,7 +107,7 @@
   transform: rotate(180deg);
 }
 
-/* Botão Selecionar */
+
 .selectButton {
   background: #0F4F55;
   color: white;
@@ -122,9 +122,9 @@
   opacity: 0.9;
 }
 
-/* ⭐ NOVO: Banner com gradiente */
+/*  Banner com gradiente */
 .bannerGestor {
-  background: linear-gradient(90deg, #94FC71 0%, #0F4F55 100%);
+  background: linear-gradient(90deg, #0F4F55 100%);
   padding: 5px 28px;
   border-radius: 12px;
   display: flex;

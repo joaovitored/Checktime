@@ -8,7 +8,7 @@ export default function PaginaSolicitacoes() {
      <Sidebar/>
       {/* Conteúdo principal */}
       <main className={styles.main}>
-        <h1 className={styles.title}>Solicitações</h1>
+        <h1 className={styles.title}>SOLICITAÇÕES</h1>
         <hr className={styles.linha}></hr>  
         <SolicitacaoLista />
         </main>
