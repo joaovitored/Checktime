@@ -148,7 +148,10 @@ yarn dev
 
 O site estará disponível no http://localhost:3000
 
+Caso queira testar, existe um email para testes
 
+Email: teste@empresa.com
+Senha: 123456
 ```
 ## 👤 **Como usar**
 
