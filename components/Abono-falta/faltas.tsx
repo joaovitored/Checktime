@@ -32,10 +32,7 @@ function Faltas() {
   }
 
   function handleDatePartChange(part: "dia" | "mes" | "ano", value: string) {
-    // Adicione validações se necessário, por exemplo:
-    // if (part === "dia" && (parseInt(value) < 1 || parseInt(value) > 31)) return;
-    // if (part === "mes" && (parseInt(value) < 1 || parseInt(value) > 12)) return;
-    // if (part === "ano" && value.length > 4) return;
+  
     setForm((f) => ({ ...f, [part]: value }));
   }
 
@@ -56,7 +53,6 @@ function Faltas() {
         <h1 className="card-title">ABONO DE FALTA</h1>
 
         <form onSubmit={handleSubmit} className="card-form">
-          {/* DATA */}
           <div className="field-group">
             <label className="field-label">Data:</label>
 
@@ -99,7 +95,6 @@ function Faltas() {
             </div>
           </div>
 
-          {/* JUSTIFICATIVA */}
           <div className="field-group">
             <label className="field-label">Justificativa:</label>
             <textarea
@@ -111,7 +106,6 @@ function Faltas() {
             />
           </div>
 
-          {/* ANEXO */}
           <div className="field-group">
             <label className="field-label">Anexo:</label>
 
@@ -128,7 +122,6 @@ function Faltas() {
             </div>
           </div>
 
-          {/* BOTÕES */}
           <div className="actions">
             <button type="submit" className="submit-btn">
               SOLICITAR
