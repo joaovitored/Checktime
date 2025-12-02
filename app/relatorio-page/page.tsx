@@ -18,7 +18,7 @@ export default function RelatorioPage() {
     <div className={styles.container}>
       <Sidebar />
       <main className={styles.main}>
-        <h1 className={styles.title}>RELATÓRIO DE PONTO</h1>
+        <h1 className={styles.title}>RELATÓRIO</h1>
         <hr className={styles.linha}></hr>
 
        <div className={styles.cards}>
@@ -26,6 +26,7 @@ export default function RelatorioPage() {
   title="Horas Trabalhadas"
   value="40h"
   subValue="Semana Atual"
+  
   icon={<WorkHistoryIcon fontSize="large" sx={{ color: "#0F4F55" }} />}
 />
 

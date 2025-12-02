@@ -81,6 +81,8 @@
   border-radius: 50%;
   border: 2px solid #0F4F55;
   object-fit: cover; /* mantém proporção da imagem e preenche o container */
+    margin-top: 78px; /* alterar se a parte do avatar vai pra cima ou pra baixo*/
+
 }
 
 .chooseFileBtn {

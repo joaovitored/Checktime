@@ -45,16 +45,15 @@ Este projeto está em desenvolvimento e será expandido com novas funcionalidade
 
 ## 🚀 **Funcionalidades**
 
-✔ Registro de ponto  
-✔ Tela dedicada para edição de perfil  
-✔ Alterar foto do usuário  
-✔ Alterar nome, email e senha  
+✔ Registro de ponto 
+✔ Tela dedicada para edição de perfil   
 ✔ Histórico de marcações  
 ✔ Relatórios de horas trabalhadas, atrasos e faltas  
 ✔ Layout responsivo  
 ✔ Abono de falta  
 ✔ Ajuste de ponto  
-✔ Validação de login e cadastro  
+✔ Validação de login e cadastro 
+
 
 </div>
 
@@ -81,10 +80,10 @@ Este projeto está em desenvolvimento e será expandido com novas funcionalidade
 ```txt
 checktime/
 ├─ app/
-│  ├─ ajustar-ponto/ 
-│  │  └─ page.tsx
-│  ├─ abono-falta/
-│  │  └─ page.tsx
+│  ├─ abono-falta/page.tsx
+│  ├─ ajustar-ponto/page.tsx 
+│  ├─ ajuste-aprovado/page.tsx 
+│  ├─ ajuste-pendente/page.tsx 
 │  ├─ api/
 │  │  └─ login/route.ts
 │  ├─ bater-ponto/
@@ -148,7 +147,10 @@ yarn dev
 
 O site estará disponível no http://localhost:3000
 
+Caso queira testar, existe um email para testes
 
+Email: teste@empresa.com
+Senha: 123456
 ```
 ## 👤 **Como usar**
 

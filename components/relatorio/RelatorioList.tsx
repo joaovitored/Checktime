@@ -5,11 +5,11 @@ import styles from "./RelatorioList.module.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const registros = [
-  { data: "04/11/2025|terça-feira", dia: "terça-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
-  { data: "03/11/2025|segunda-feira", dia: "segunda-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
-  { data: "02/11/2025|sabado", dia: "sabado", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
-  { data: "03/11/2025|sexta-feira", dia: "sexta-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
-  { data: "02/11/2025|quinta-feira", dia: "quinta-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
+  { data: "04/11/2025 | Terça-feira", dia: "terça-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
+  { data: "03/11/2025 | Segunda-feira", dia: "segunda-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
+  { data: "02/11/2025 | Sábado", dia: "sabado", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
+  { data: "03/11/2025 | Sexta-feira", dia: "sexta-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
+  { data: "02/11/2025 | Quinta-feira", dia: "quinta-feira", HorasExtras: "00:00", HorasFaltantes: "00:00", Saldo: "00:00" },
 ];
 
 export default function RelatorioList() {
@@ -26,8 +26,8 @@ export default function RelatorioList() {
           {/* Linha principal */}
           <div className={styles.row}>
             <span>{item.data}</span>
-            <span>HorasExtras: {item.HorasExtras}</span>
-            <span>HorasFaltantes: {item.HorasFaltantes}</span>
+            <span>Horas Extras: {item.HorasExtras}</span>
+            <span>Horas Faltantes: {item.HorasFaltantes}</span>
             <span>Saldo: {item.Saldo}</span>
 
             <button

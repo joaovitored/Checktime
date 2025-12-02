@@ -1,0 +1,100 @@
+.containerResumo {
+  background: #fff;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  margin-bottom: 30px;
+}
+
+.resumoLinha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  padding: 12px 0;
+  border-bottom: 3px solid #0F4F55;
+  color: #0F4F55;
+  font-weight: 650;
+}
+
+.resumoLinha:last-child {
+  border-bottom: none;
+}
+
+.mes {
+  background: #E8F6F7;
+  padding: 12px 40px;
+  font-size: 1.6rem;
+  color: #0F4F55;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.tableWrapper {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  max-height: 520px;
+  overflow-y: auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+
+}
+
+.table th,
+.table td {
+  text-align: center; /* centraliza o texto */
+}
+
+.table th {
+  font-size: 1.2rem;
+  color: #0F4F55;
+  padding-bottom: 16px;
+  border-bottom: 4px solid  #0F4F55;
+;
+}
+
+.table td {
+  padding: 16px 0;
+  color: #444;
+  font-size: 1.2rem;
+}
+
+.ok {
+  color: #0a8a0a;
+  font-weight: bold;
+}
+
+.tituloLinha {
+  width: 40%;
+  height: 5px;
+  background: #0F4F55;
+  opacity: 0.8;
+  box-shadow: 0 2px 6px rgba(15, 54, 27, 0.5);
+  border-radius: 3px;
+  margin: 8px 0 20px 0;
+}
+
+
+.mesBotao {
+  position: absolute;
+  top: 70%; /* centraliza verticalmente */
+  left: 80%; /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+  width: 30%; /* largura do botão, pode ajustar */
+  background: #ffffff;
+  color: #0F4F55;
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(15, 54, 27, 0.3);
+}
+
+.tableText {
+  color: #0F4F55 !important; /*vai forçar a cor pra funcionar nos textos obrigatoriamente*/
+  font-weight: 600; /*  se quiser mais destaque na letra*/
+}

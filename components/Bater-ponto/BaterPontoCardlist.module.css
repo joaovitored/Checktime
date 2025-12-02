@@ -5,17 +5,16 @@
   gap: 20px;
   flex-wrap: wrap; 
   margin-top: 20px;
-  background-color: white;
   height: 300px;
   border-radius: 10px;
-  box-shadow: 0 2px 6px #0F4F55;
+  
 }
 .cardlist {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px #0F4F55;
   padding: 16px 20px;
-  width: 450px;
+  width: 950px;
   
   height: 250px;
   margin: 0 auto;
@@ -78,11 +77,19 @@ gap: 10px;
   font-size: 0.55cm;
 }
 
-.linha {
+.linha1 {
   height: 1px;
   background: #0F4F55;
   margin: 6px 0 10px 0;
-  width: 370px;
+  width: 900px;
+}
+
+.linha2{
+ height: 1px;
+  background: #0F4F55;
+  margin: 6px 0 10px 0;
+  width: 400px;
+
 }
 
 .tabela {
@@ -101,4 +108,28 @@ gap: 10px;
 
 .linhaPeriodo span:last-child {
   font-weight: 600;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border-bottom: none;
+  padding: 8px 12px;
+  text-align: center;
+  color: #333;
+  font-size: 0.45cm;
+}
+
+/* Adiciona uma linha APENAS abaixo do cabeçalho */
+.table thead tr {
+  border-bottom: 2px solid #0F4F55; /* cor que já usa nos outros elementos */
+}
+
+/* Desativa o hover se quiser manter tudo limpo */
+.table tbody tr:hover {
+  background-color: transparent;
 }
