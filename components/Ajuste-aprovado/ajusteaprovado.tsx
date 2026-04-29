@@ -62,7 +62,7 @@ export default function AjusteAprovado() {
           <p className={styles.approvedName}>{dados.aprovadoPor}</p>
           <p className={styles.approvedDate}>{dados.dataAprovacao}</p>
         </div>
-            {/* BOTÃO VOLTAR */}
+            {/* BOTÃO VOLTA */}
         <div className="flex justify-center mt-10">
           <button
             onClick={handleBack}
