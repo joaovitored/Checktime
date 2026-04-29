@@ -147,7 +147,7 @@ function AjustePonto() {
               </div>
             </div>
           </div>
-
+              {/* TIPO */}
           <div className="field-group">
             <label className="field-label">Tipo:</label>
 
@@ -174,7 +174,7 @@ function AjustePonto() {
               </div>
             </div>
           </div>
-
+            {/* JUSTIFICATIVA */}
           <div className="field-group">
             <label className="field-label">Justificativa:</label>
             <textarea

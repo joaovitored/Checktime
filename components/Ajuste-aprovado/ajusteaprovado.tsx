@@ -32,13 +32,13 @@ export default function AjusteAprovado() {
         </h1>
 
         <hr className={`${styles.divider} my-6`} />
-
+        {/* TEXTO PRINCIPAL */}
         <div className="space-y-">
           <p><strong>Tipo:</strong> {dados.tipo}</p>
           <p><strong>Data:</strong> {dados.data}</p>
           <p><strong>Criada em:</strong> {dados.criadaEm}</p>
         </div>
-
+          {/* SEÇÃO AJUSTE */}
         <h2 className={`${styles.sectionTitle} text-xl font-semibold mt-8 mb-3`}>
           Ajuste aprovado
         </h2>
@@ -48,7 +48,7 @@ export default function AjusteAprovado() {
             <p key={i}>{r}</p>
           ))}
         </div>
-
+          {/* JUSTIFICATIVA */}
         <h2 className={`${styles.sectionTitle} text-xl font-semibold mt-8 mb-2`}>
           Justificativa
         </h2>
@@ -56,13 +56,13 @@ export default function AjusteAprovado() {
         <p className="mt-2 leading-relaxed">
           {dados.justificativa}
         </p>
-
+          {/* APROVADO */}
         <div className={`${styles.approvedBox} text-right mt-12 space-y-1`}>
           <p className={styles.approvedLabel}>Aprovada por</p>
           <p className={styles.approvedName}>{dados.aprovadoPor}</p>
           <p className={styles.approvedDate}>{dados.dataAprovacao}</p>
         </div>
-
+            {/* BOTÃO VOLTAR */}
         <div className="flex justify-center mt-10">
           <button
             onClick={handleBack}
