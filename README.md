@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/png/Vector.png" width="340" alt="CheckTime Logo">
+  <img src="./frontend/public/png/Vector.png" width="340" alt="CheckTime Logo">
 </p>
 
 <p align="center">
@@ -129,13 +129,13 @@ checktime/
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/joaovitorsantanared/projetojs.git
-cd projetojs
-
+git clone https://github.com/joaovitored/Checktime.git
+cd Checktime
+cd frontend(para acessar o front)
 
 ### 2. Instale as dependÊncias
 
-npm install
+npm install/npm i
 # ou
 yarn install
 
