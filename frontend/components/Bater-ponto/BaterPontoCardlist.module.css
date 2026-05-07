@@ -1,135 +1,94 @@
-.cardscontainer{
-   display: flex;
-  justify-content: center;
+.cardscontainer {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; 
-  margin-top: 20px;
-  height: 300px;
-  border-radius: 10px;
-  
+  flex-wrap: wrap;
+  margin-top: 40px;
+  cursor: default;
 }
 .cardlist {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px #0F4F55;
-  padding: 16px 20px;
-  width: 950px;
-  
-  height: 250px;
-  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px #0f4f55;
+  padding: 23px 30px;
+
+  flex: 2;
+  height: 268px;
+  margin: 0;
 }
 
 .cardlist2 {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px #0F4F55;
-  padding: 16px 20px;
-  width: 450px;
-  height: 250px;
-  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px #0f4f55;
+  padding: 23px 30px;
+  flex: 1;
+  height: 268px;
+  margin: 0;
 }
 .titulo {
-  color: #0F4F55;
-  font-weight: 600;
-  font-size: 0.75cm;
-  margin-bottom: 12px;
-}
-
-.headercontainer {
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-gap: 10px;
-}
-
-.headercontainer2 {
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-gap: 10px;
-}
-
-.header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 510px;
-  font-weight: 600;
-  color: #0F4F55;
-  font-size: 0.45cm;
+  color: #0f4f55;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-bottom: 18px;
 }
 
 .header2 {
-  display: grid;
+  display: flex;
   flex-direction: column;
-  width: 510px;
-  font-weight: 600;
-  color: #0F4F55;
-  font-size: 0.45cm;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 8px;
+
+  justify-content: center;
+  height: 100%;
 }
 
 .texto3 {
-  color: #0F4F55;
-  font-size: 0.55cm;
+  color: #0f4f55;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
-.linha1 {
+.linha2 {
   height: 1px;
-  background: #0F4F55;
-  margin: 6px 0 10px 0;
-  width: 900px;
-}
-
-.linha2{
- height: 1px;
-  background: #0F4F55;
-  margin: 6px 0 10px 0;
-  width: 400px;
-
-}
-
-.tabela {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 500px;
-}
-
-.linhaPeriodo {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-size: 0.45cm;
-  color: #333;
-}
-
-.linhaPeriodo span:last-child {
-  font-weight: 600;
+  background: #0f4f55;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .table {
   width: 100%;
-  border-collapse: collapse;
 }
 
-.table th,
-.table td {
-  border-bottom: none;
-  padding: 8px 12px;
+.table th:first-child,
+.table td:first-child {
+  text-align: left;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
   text-align: center;
-  color: #333;
-  font-size: 0.45cm;
 }
 
-/* Adiciona uma linha APENAS abaixo do cabeçalho */
+.table th:last-child,
+.table td:last-child {
+  text-align: right;
+}
+
+.table th {
+  color: #0f4f55;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.table td {
+  color: #0f4f55;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.8rem 0;
+}
+
 .table thead tr {
-  border-bottom: 2px solid #0F4F55; /* cor que já usa nos outros elementos */
-}
-
-/* Desativa o hover se quiser manter tudo limpo */
-.table tbody tr:hover {
-  background-color: transparent;
+  border-bottom: 2px solid #0f4f55;
 }
