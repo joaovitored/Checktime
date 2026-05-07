@@ -12,8 +12,16 @@ export default function BaterPontoCard() {
 
   // Cria os sons apenas no cliente
   useEffect(() => {
-    setSomSucesso(new Audio("https://www.myinstants.com/media/sounds/deltarune-ominous-cancel.mp3"));
-    setSomErro(new Audio("https://www.myinstants.com/media/sounds/deltarune-ominous-sound.mp3"));
+    setSomSucesso(
+      new Audio(
+        "https://www.myinstants.com/media/sounds/deltarune-ominous-cancel.mp3",
+      ),
+    );
+    setSomErro(
+      new Audio(
+        "https://www.myinstants.com/media/sounds/deltarune-ominous-sound.mp3",
+      ),
+    );
   }, []);
 
   const handleClick = () => {
@@ -51,7 +59,10 @@ export default function BaterPontoCard() {
               <Relogio />
             </div>
             <button className={styles.button} onClick={handleClick}>
-              <TimerOutlinedIcon className="mr-0" />
+              <TimerOutlinedIcon
+                className="mr-0"
+                style={{ marginRight: "8px" }}
+              />
               Registrar
             </button>
           </div>
