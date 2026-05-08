@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @tailwind utilities;
 @tailwind utilities;
+@plugin "../node_modules/daisyui/index.js";
 
 /* Depois disso, pode vir o seu @layer */
 @layer base {
