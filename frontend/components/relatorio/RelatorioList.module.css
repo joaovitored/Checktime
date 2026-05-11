@@ -1,106 +1,118 @@
-.cardlist {
+/* RelatorioList */
+
+.cardlist,
+.cardlist2 {
   background: #fff;
-  width: auto;
-  height: auto;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.);
-  flex: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease;
+
+  gap: 4px;
+
+  padding: 25px;
+
   margin-top: 20px;
   margin-bottom: 40px;
-  gap: 4px;
-  box-shadow: 0 2px 6px #0F4F55;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 6px #0f4f55;
+
+  flex: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.cardlist2 {
+  margin-left: 250px;
 }
 
 .row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr auto;
   align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  padding: 19px 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-  font-size: 0.9rem;
-}
 
-.row {
-  color: #0f4f55; 
+  padding: 19px 16px;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  color: #0f4f55;
+
+  font-size: 0.9rem;
   font-weight: 700;
-  
+
+  transition: transform 0.2s ease;
 }
 
 .row:hover {
   transform: translateY(-3px);
 }
 
-.button{
-  background: none;
-  opacity: 0.3;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 4px;
-}
-
-.row2{
+.row2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 10px;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  padding: 19px 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-  font-size: 0.9rem;
+
   height: 100px;
-}
 
-.row2 h3{
- display: flex;
- align-items: center;
- gap: 4px;
-}
+  padding: 19px 16px;
 
-.cardlist2 {
+  border-radius: 8px;
+
   background: #fff;
-  width: auto;
-  height: auto;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  font-size: 0.9rem;
+
   transition: transform 0.2s ease;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  gap: 4px;
-  box-shadow: 0 2px 6px #0F4F55;
-  margin-left: 250px;
 }
 
+.row2 h3 {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.button {
+  background: none;
+
+  border: none;
+  border-radius: 5px;
+
+  padding: 4px;
+
+  opacity: 0.3;
+
+  cursor: pointer;
+}
 
 .slide {
   max-height: 0;
+
   overflow: hidden;
+
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
 }
 
 .slide.open {
   max-height: 200px;
+
   opacity: 1;
 }
 
-/* Ícone girando */
 .icon {
   transition: transform 0.25s ease;
 }
@@ -109,48 +121,63 @@
   transform: rotate(180deg);
 }
 
-
 .selectButton {
-  background: #0F4F55;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
   width: fit-content;
+
+  padding: 8px 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #0f4f55;
+
+  color: white;
+
+  cursor: pointer;
 }
 
 .selectButton:hover {
   opacity: 0.9;
 }
 
-/*  Banner com gradiente */
 .bannerGestor {
-  background: linear-gradient(90deg, #0F4F55 100%);
-  padding: 5px 28px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  padding: 5px 28px;
+
+  border-radius: 12px;
+
+  background: #0f4f55;
+
   color: white;
+
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .botaoAjuste {
-  background: rgba(255,255,255,0.15);
-  border: 2px solid rgba(255,255,255,0.6);
-  color: white;
   padding: 10px 50px;
+
+  border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
-  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  color: white;
+
   font-size: 0.95rem;
-  transition: 0.2s;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
 }
 
 .botaoAjuste:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
-
