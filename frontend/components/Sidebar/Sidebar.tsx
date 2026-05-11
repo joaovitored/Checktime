@@ -1,112 +1,156 @@
 "use client";
+
 import { useState } from "react";
 import styles from "./Sidebar.module.css";
-import { useRouter } from "next/navigation";
-import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
-import FeedIcon from '@mui/icons-material/Feed';
-import WavingHandIcon from '@mui/icons-material/WavingHand';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import RequestPageIcon from '@mui/icons-material/RequestPage';
-import LogoutIcon from '@mui/icons-material/Logout';
-import CloseIcon from '@mui/icons-material/Close';
+import { useRouter, usePathname } from "next/navigation";
+
+import TimerOutlinedIcon from "@mui/icons-material/TimerOutlined";
+import FeedIcon from "@mui/icons-material/Feed";
+import WavingHandIcon from "@mui/icons-material/WavingHand";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function Sidebar() {
   const router = useRouter();
+  const pathname = usePathname();
+
   const [isMinimized, setIsMinimized] = useState(false);
 
   return (
-    <aside 
-      className={`${styles.sidebar} ${isMinimized ? styles.minimized : ''}}`}
-      style={{ width: isMinimized ? '80px' : '280px' }}
+    <aside
+      className={`${styles.sidebar} ${isMinimized ? styles.minimized : ""}`}
+      style={{ width: isMinimized ? "80px" : "280px" }}
       onClick={() => setIsMinimized(!isMinimized)}
     >
-      
       {!isMinimized && (
-        <div onClick={(e)=>{e.stopPropagation();
-          router.push("/editar-perfil")}} className={styles.profileimg}>
-          
+        <div className={styles.profileimg}>
           <div className={styles.profile}>
-          <img
-          src="/follow.png"
-          alt="User"
-          width={100}
-          height={100}
-          className="rounded-full border-2"
-        />
-        </div>
+            <div
+              className={styles.imageWrapper}
+              onClick={(e) => {
+                e.stopPropagation();
+                router.push("/editar-perfil");
+              }}
+            >
+              <img
+                src="/follow.png"
+                alt="User"
+                width={100}
+                height={100}
+                className={styles.downloadImg}
+              />
+            </div>
+          </div>
+
           <div>
-            <p className="font-semibold text-lg">Samuel Batista</p>
-            <p className="text-sm text-gray-200">Analista TI</p>
+            <p className={styles.name}>Samuel Batista</p>
+
+            <p className={styles.job}>Analista TI</p>
           </div>
         </div>
       )}
-      
+
       <nav className={styles.nav}>
         <button
           onClick={(e) => {
             e.stopPropagation();
             router.push("/bater-ponto");
           }}
-          className={styles.button}
-          style={{ justifyContent: isMinimized ? 'center' : 'flex-start' }}
+          className={`${styles.button} ${
+            pathname === "/bater-ponto" ? styles.active : ""
+          }`}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
           title="Bater Ponto"
         >
-          <TimerOutlinedIcon className="mr-3" />
-          {!isMinimized && "Bater Ponto"}
+          <div className={styles.buttonContent}>
+            <TimerOutlinedIcon />
+
+            {!isMinimized && "Bater Ponto"}
+          </div>
         </button>
-        <button 
+
+        <button
           onClick={(e) => {
             e.stopPropagation();
-            router.push("relatorio-page");
+            router.push("/relatorio-page");
           }}
-          className={styles.button}
-          style={{ justifyContent: isMinimized ? 'center' : 'flex-start' }}
+          className={`${styles.button} ${
+            pathname === "/relatorio-page" ? styles.active : ""
+          }`}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
           title="Relatórios"
         >
-          <FeedIcon className="mr-3" />
-          {!isMinimized && "Relatórios"}
+          <div className={styles.buttonContent}>
+            <FeedIcon />
+
+            {!isMinimized && "Relatórios"}
+          </div>
         </button>
+
         <button
           onClick={(e) => {
             e.stopPropagation();
             router.push("/solicitacoes");
           }}
-          className={styles.button}
-          style={{ justifyContent: isMinimized ? 'center' : 'flex-start' }}
+          className={`${styles.button} ${
+            pathname === "/solicitacoes" ? styles.active : ""
+          }`}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
           title="Solicitações"
         >
-          <WavingHandIcon className="mr-3" />
-          {!isMinimized && "Solicitações"}
+          <div className={styles.buttonContent}>
+            <WavingHandIcon />
+
+            {!isMinimized && "Solicitações"}
+          </div>
         </button>
+
         <button
           onClick={(e) => {
             e.stopPropagation();
             router.push("/ponto-espelho");
           }}
-          className={styles.button}
-          style={{ justifyContent: isMinimized ? 'center' : 'flex-start' }}
+          className={`${styles.button} ${
+            pathname === "/ponto-espelho" ? styles.active : ""
+          }`}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
           title="Ponto Espelho"
         >
-          <CalendarMonthIcon className="mr-3" />
-          {!isMinimized && "Ponto Espelho"}
+          <div className={styles.buttonContent}>
+            <CalendarMonthIcon />
+
+            {!isMinimized && "Ponto Espelho"}
+          </div>
         </button>
-       
       </nav>
-    
+
       <nav className={styles.nav2}>
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          router.push("/");
-        }}
-        className={styles.logout}
-        style={{ justifyContent: isMinimized ? 'center' : 'flex-start' }}
-        title="Sair"
-      >
-        <LogoutIcon className="mr-3" />
-        {!isMinimized && "Sair"}
-      </button>
-     </nav>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push("/");
+          }}
+          className={styles.logout}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
+          title="Sair"
+        >
+          <div className={styles.buttonContent}>
+            <LogoutIcon />
+
+            {!isMinimized && "Sair"}
+          </div>
+        </button>
+      </nav>
     </aside>
   );
 }
