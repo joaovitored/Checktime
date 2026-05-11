@@ -4,7 +4,7 @@ import styles from "./RelatorioCard.module.css";
 interface RelatorioCardProps {
   title: string;
   value: string;
-  subValue?: string;
+  subValue?: ReactNode;
   icon: ReactNode;
 }
 
