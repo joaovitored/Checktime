@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "./solicitacoes.module.css";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import ForumRoundedIcon from "@mui/icons-material/ForumRounded";
+import Filter from "../ui/filter";
 
 const registros = [
   { data: "02/10/2025 | Quinta-feira", Ajuste_Aprovado: "Ajuste aprovado" },
@@ -55,49 +56,10 @@ export default function SolicitacoesList() {
   return (
     <div className="flex flex-col gap-4">
 
-      {/* FILTRO DAISYUI */}
-      <div style={ {marginTop:"20px"} }>
-        <form
-          className="filter" style={ { columnGap: "6px" } }
-          onReset={() => setFiltro("")}
-        >
-          {/* APROVADOS */}
-          <input
-            className="btn checked:bg-[#0C5051] checked:text-white checked:border-[#0C5051] border-2 rounded-2xl"
-            type="radio"
-            name="status"
-            aria-label="Aprovados"
-            checked={filtro === "Aprovado"}
-            onChange={() => setFiltro("Aprovado")}
-          />
-          {/* PENDENTES */}
-          <input
-            className="btn checked:bg-[#0C5051] checked:text-white checked:border-[#0C5051] border-2 rounded-2xl"
-            type="radio"
-            name="status"
-            aria-label="Pendentes"
-            checked={filtro === "Pendente"}
-            onChange={() => setFiltro("Pendente")}
-          />
-
-          {/* Recusado
-          <input
-            className="btn checked:bg-[#0C5051] checked:text-white checked:border-[#0C5051] border-2 rounded-2xl"
-            type="radio"
-            name="status"
-            aria-label="Recusados"
-            checked={filtro === "Recusado"}
-            onChange={() => setFiltro("Recusado")}
-          /> */}
-
-          {/* RESET */}
-          <input
-            className="btn border-2 rounded-2xl"
-            type="reset"
-            value="×"
-          />
-        </form>
-      </div>
+      <Filter
+        filtro={filtro}
+        setFiltro={setFiltro}
+      />
 
       {/* LISTA */}
       <div className={`flex flex-col gap-4 ${styles.cardlist}`}>
