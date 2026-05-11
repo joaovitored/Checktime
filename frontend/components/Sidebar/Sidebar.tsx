@@ -9,7 +9,12 @@ import WavingHandIcon from "@mui/icons-material/WavingHand";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-export default function Sidebar({ isMinimized, setIsMinimized }) {
+type SidebarProps = {
+  isMinimized: boolean;
+  setIsMinimized: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Sidebar({ isMinimized, setIsMinimized }: SidebarProps) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -55,7 +60,9 @@ export default function Sidebar({ isMinimized, setIsMinimized }) {
           className={`${styles.button} ${
             pathname === "/bater-ponto" ? styles.active : ""
           }`}
-          style={{ justifyContent: isMinimized ? "center" : "flex-start" }}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
         >
           <div className={styles.buttonContent}>
             <TimerOutlinedIcon />
@@ -71,7 +78,9 @@ export default function Sidebar({ isMinimized, setIsMinimized }) {
           className={`${styles.button} ${
             pathname === "/relatorio-page" ? styles.active : ""
           }`}
-          style={{ justifyContent: isMinimized ? "center" : "flex-start" }}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
         >
           <div className={styles.buttonContent}>
             <FeedIcon />
@@ -87,7 +96,9 @@ export default function Sidebar({ isMinimized, setIsMinimized }) {
           className={`${styles.button} ${
             pathname === "/solicitacoes" ? styles.active : ""
           }`}
-          style={{ justifyContent: isMinimized ? "center" : "flex-start" }}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
         >
           <div className={styles.buttonContent}>
             <WavingHandIcon />
@@ -103,7 +114,9 @@ export default function Sidebar({ isMinimized, setIsMinimized }) {
           className={`${styles.button} ${
             pathname === "/ponto-espelho" ? styles.active : ""
           }`}
-          style={{ justifyContent: isMinimized ? "center" : "flex-start" }}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
         >
           <div className={styles.buttonContent}>
             <CalendarMonthIcon />
@@ -119,7 +132,9 @@ export default function Sidebar({ isMinimized, setIsMinimized }) {
             router.push("/");
           }}
           className={styles.logout}
-          style={{ justifyContent: isMinimized ? "center" : "flex-start" }}
+          style={{
+            justifyContent: isMinimized ? "center" : "flex-start",
+          }}
         >
           <div className={styles.buttonContent}>
             <LogoutIcon />
