@@ -69,20 +69,21 @@ export default function BaterPontoCard() {
         </div>
       </div>
 
-      {mensagem && (
-        <div
-          style={{
-            width: "100%",
-            textAlign: "center",
-            marginTop: "12px",
-            fontWeight: "600",
-            fontSize: "1.1rem",
-            color: tipoMensagem === "sucesso" ? "#16a34a" : "#dc2626",
-          }}
-        >
-          {mensagem}
-        </div>
-      )}
-    </>
-  );
+      <div className="relative w-full h-0"> 
+  {mensagem && (
+    <div
+      className={`
+        absolute left-0 right-0 text-center
+        transition-all duration-300 ease-in-out
+        mt-3                    
+        font-semibold                /* Corresponde ao fontWeight: 600 */
+        text-[1.1rem]                
+        ${tipoMensagem === "sucesso" ? "text-[#16a34a]" : "text-[#dc2626]"}
+      `}>
+      {mensagem}
+    </div>
+  )}
+  </div>
+  </>
+);
 }
