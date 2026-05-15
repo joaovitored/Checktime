@@ -7,38 +7,88 @@ export default function BaterPontoCard() {
   const [jaBateuPonto, setJaBateuPonto] = useState(false);
   const [mensagem, setMensagem] = useState("");
   const [tipoMensagem, setTipoMensagem] = useState<"sucesso" | "erro" | "">("");
-  const [somSucesso, setSomSucesso] = useState<HTMLAudioElement | null>(null);
-  const [somErro, setSomErro] = useState<HTMLAudioElement | null>(null);
 
-  // Cria os sons apenas no cliente
+  const [somSucesso, setSomSucesso] =
+    useState<HTMLAudioElement | null>(null);
+
+  const [somErro, setSomErro] =
+    useState<HTMLAudioElement | null>(null);
+
+  const TEMPO_BLOQUEIO = 8 * 60 * 60 * 1000; // 8h
+
+  // Sons
   useEffect(() => {
     setSomSucesso(
       new Audio(
-        "https://www.myinstants.com/media/sounds/deltarune-ominous-cancel.mp3",
-      ),
+        "https://www.myinstants.com/media/sounds/deltarune-ominous-cancel.mp3"
+      )
     );
+
     setSomErro(
       new Audio(
-        "https://www.myinstants.com/media/sounds/deltarune-ominous-sound.mp3",
-      ),
+        "https://www.myinstants.com/media/sounds/deltarune-ominous-sound.mp3"
+      )
     );
   }, []);
 
+  // Verifica se já bateu ponto
+  useEffect(() => {
+    const ultimoPonto = localStorage.getItem("ultimoPonto");
+
+    if (ultimoPonto) {
+      const diferenca = Date.now() - Number(ultimoPonto);
+
+      if (diferenca < TEMPO_BLOQUEIO) {
+        setJaBateuPonto(true);
+
+        // libera após completar 8h
+        setTimeout(() => {
+          setJaBateuPonto(false);
+          localStorage.removeItem("ultimoPonto");
+        }, TEMPO_BLOQUEIO - diferenca);
+      }
+    }
+  }, []);
+
   const handleClick = () => {
-    if (!jaBateuPonto) {
-      somSucesso?.play();
-      setJaBateuPonto(true);
-      setMensagem("Ponto registrado com sucesso!");
-      setTipoMensagem("sucesso");
-    } else {
+    // Já registrou
+    if (jaBateuPonto) {
       somErro?.play();
+
       setMensagem("Você já registrou o ponto.");
       setTipoMensagem("erro");
+
+      setTimeout(() => {
+        setMensagem("");
+        setTipoMensagem("");
+      }, 3000);
+
+      return;
     }
+
+    // Registrar ponto
+    somSucesso?.play();
+
+    setJaBateuPonto(true);
+
+    localStorage.setItem(
+      "ultimoPonto",
+      Date.now().toString()
+    );
+
+    setMensagem("Ponto registrado com sucesso!");
+    setTipoMensagem("sucesso");
+
     setTimeout(() => {
       setMensagem("");
       setTipoMensagem("");
     }, 3000);
+
+    // libera após 8 horas
+    setTimeout(() => {
+      setJaBateuPonto(false);
+      localStorage.removeItem("ultimoPonto");
+    }, TEMPO_BLOQUEIO);
   };
 
   return (
@@ -54,36 +104,53 @@ export default function BaterPontoCard() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+
           <div className={styles.overlayContent}>
             <div className={styles.button2}>
               <Relogio />
             </div>
-            <button className={styles.button} onClick={handleClick}>
+
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              style={{
+                opacity: jaBateuPonto ? 0.6 : 1,
+                cursor: "pointer",
+              }}
+            >
               <TimerOutlinedIcon
                 className="mr-0"
                 style={{ marginRight: "8px" }}
               />
-              Registrar
+
+              {jaBateuPonto
+                ? "Ponto Registrado"
+                : "Registrar"}
             </button>
           </div>
         </div>
       </div>
 
-      <div className="relative w-full h-0"> 
-  {mensagem && (
-    <div
-      className={`
-        absolute left-0 right-0 text-center
-        transition-all duration-300 ease-in-out
-        mt-3                    
-        font-semibold                /* Corresponde ao fontWeight: 600 */
-        text-[1.1rem]                
-        ${tipoMensagem === "sucesso" ? "text-[#16a34a]" : "text-[#dc2626]"}
-      `}>
-      {mensagem}
-    </div>
-  )}
-  </div>
-  </>
-);
+      <div className="relative w-full h-0">
+        {mensagem && (
+          <div
+            className={`
+              absolute left-0 right-0 text-center
+              transition-all duration-300 ease-in-out
+              mt-3
+              font-semibold
+              text-[1.1rem]
+              ${
+                tipoMensagem === "sucesso"
+                  ? "text-[#16a34a]"
+                  : "text-[#dc2626]"
+              }
+            `}
+          >
+            {mensagem}
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
